@@ -1,0 +1,24 @@
+var express = require("express");
+var licenseRouter = require("./license");
+var userRoutes = require("./user");
+var taskRoutes = require("./task");
+var eventRoutes = require("./event");
+var jointEventRoutes = require("./jointEvent");
+var greetingRoutes = require("./greetings");
+var gallery = require("./gallery");
+var category = require("./category");
+var strapi = require("./strapi");
+var packages = require("./packages");
+var app = express();
+app.use("/license/", licenseRouter);
+app.use("/user/", userRoutes);
+app.use("/tasks/", taskRoutes);
+app.use("/events/", eventRoutes);
+app.use("/category/", category);
+app.use("/packages/", packages);
+app.use("/gallery/", gallery);
+app.use("/joint-events/", jointEventRoutes);
+app.use("/greetings/", greetingRoutes);
+app.use("/strapi/", strapi);
+
+module.exports = app;
